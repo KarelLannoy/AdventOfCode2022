@@ -60,9 +60,9 @@ namespace AdventOfCode2022
                 {
                     cycle++;
                     if (cycle == x + (line * 40) || cycle == x + (line * 40) + 1 || cycle == x + (line * 40) + 2)
-                        lines[line] += "#";
+                        lines[line] += "█";
                     else
-                        lines[line] += ".";
+                        lines[line] += " ";
 
                     if (cycle % 40 == 0)
                     {
