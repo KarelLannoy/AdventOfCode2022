@@ -37,7 +37,7 @@ namespace AdventOfCode2022
         }
         private static void FillMapWithNoBeaconZone(Dictionary<Point, string> map, KeyValuePair<Point, Point> sensor, int rowToCHeck)
         {
-            var allPointsWithinManhattenDistance = FindPointsWithinManhattenDistance(sensor.Key, ManhattanDistance(sensor.Key, sensor.Value), rowToCHeck);
+            var allPointsWithinManhattenDistance = FindPointsWithinManhattenDistance(sensor.Key, Helpers.ManhattanDistance(sensor.Key, sensor.Value), rowToCHeck);
             foreach (var point in allPointsWithinManhattenDistance)
             {
                 if (!map.ContainsKey(point))
@@ -54,10 +54,7 @@ namespace AdventOfCode2022
             }
             return result;
         }
-        private static int ManhattanDistance(Point a, Point b)
-        {
-            return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
-        }
+        
         public static void Part2()
         {
             var lines = File.ReadAllLines(@"Inputs/Input15.txt").ToList();
@@ -75,7 +72,7 @@ namespace AdventOfCode2022
             var rowToCheckMax = 4000000;
             foreach (var sensor in sensors)
             {
-                FindPointsWithinManhattenDistance2(sensor.Key, ManhattanDistance(sensor.Key, sensor.Value), rowToCheckMin, rowToCheckMax);
+                FindPointsWithinManhattenDistance2(sensor.Key, Helpers.ManhattanDistance(sensor.Key, sensor.Value), rowToCheckMin, rowToCheckMax);
             }
             foreach (var row in _lines.OrderBy(l => l.Key))
             {
