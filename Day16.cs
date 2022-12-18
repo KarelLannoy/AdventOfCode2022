@@ -39,7 +39,7 @@ namespace AdventOfCode2022
                 {
                     _optimalFlowRate = flowRate;
                     _things = allVales;
-                    //Console.WriteLine(flowRate + " -> " + path);
+                    Console.WriteLine(flowRate + " -> " + path);
                 }
                 return;
             }
