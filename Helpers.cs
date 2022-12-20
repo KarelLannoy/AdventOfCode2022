@@ -76,4 +76,21 @@ namespace AdventOfCode2022
             }
         }
     }
+    public struct Point3D : IEquatable<Point3D>
+    {
+        public int X;
+        public int Y;
+        public int Z;
+        public Point3D(int x, int y, int z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+
+        public bool Equals(Point3D other)
+        {
+            return other.X == this.X && other.Y == this.Y && other.Z == this.Z;
+        }
+    }
 }
