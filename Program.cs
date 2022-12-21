@@ -5,14 +5,14 @@ using System.Diagnostics;
 Stopwatch sw = new Stopwatch();
 sw.Start();
 
-Day20.Part1();
+Day21.Part1();
 
 sw.Stop();
 Console.WriteLine($"Timing: {sw.Elapsed}");
 sw.Reset();
 sw.Start();
 
-Day20.Part2();
+Day21.Part2();
 
 sw.Stop();
 Console.WriteLine($"Timing: {sw.Elapsed}");
