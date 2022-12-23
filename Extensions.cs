@@ -40,8 +40,23 @@ namespace AdventOfCode2022
             return grid.ToString();
         }
 
-		// Split a string into separate strings, as specified by the delimiter.
-		public static string[] SplitToStringArray(this string str, string split, bool removeEmpty)
+        public static string Print(this HashSet<Point> hashSetToPrint)
+        {
+            StringBuilder grid = new StringBuilder();
+            for (int y = hashSetToPrint.Min(k => k.Y); y <= hashSetToPrint.Max(k => k.Y); y++)
+            {
+                var line = "";
+                for (int x = hashSetToPrint.Min(k => k.X); x <= hashSetToPrint.Max(k => k.X); x++)
+                {
+                    line += hashSetToPrint.Contains(new Point(x, y)) ? "#" : ".";
+                }
+                grid.AppendLine(line);
+            }
+            return grid.ToString();
+        }
+
+        // Split a string into separate strings, as specified by the delimiter.
+        public static string[] SplitToStringArray(this string str, string split, bool removeEmpty)
 		{
 			return str.Split(new string[] { split }, removeEmpty ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
 		}
